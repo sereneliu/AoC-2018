@@ -26,9 +26,9 @@ puzzle_input = open('day2.txt', 'r')
 puzzle_input = puzzle_input.read()
 puzzle_input = puzzle_input.split('\n')
 
-def count_letters(num, id, counter):
-    for letter in set(id):
-        if id.count(letter) == num:
+def count_letters(num, box_id, counter):
+    for letter in set(box_id):
+        if box_id.count(letter) == num:
             counter += 1
             break
     return counter
@@ -36,10 +36,43 @@ def count_letters(num, id, counter):
 def find_checksum(box_ids):
     two_letters = 0
     three_letters = 0
-    for id in box_ids:
-        id = list(id)
-        two_letters = count_letters(2, id, two_letters)
-        three_letters = count_letters(3, id, three_letters)
+    for box_id in box_ids:
+        box_id = list(box_id)
+        two_letters = count_letters(2, box_id, two_letters)
+        three_letters = count_letters(3, box_id, three_letters)
     return two_letters * three_letters
 
 print find_checksum(puzzle_input) # Your puzzle answer was 8610.
+
+# --- Part Two ---
+# Confident that your list of box IDs is complete, you're ready to find the boxes full of prototype fabric.
+
+# The boxes will have IDs which differ by exactly one character at the same position in both strings. For example, given the following box IDs:
+
+# abcde
+# fghij
+# klmno
+# pqrst
+# fguij
+# axcye
+# wvxyz
+# The IDs abcde and axcye are close, but they differ by two characters (the second and fourth). However, the IDs fghij and fguij differ by exactly one character, the third (h and u). Those must be the correct boxes.
+
+# What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing character from either ID, producing fgij.)
+
+def find_correct_boxes(box_ids):
+    for box_id1 in box_ids:
+        for box_id2 in box_ids:
+            differences = 0
+            common_letters = []
+            for i in range(len(box_id1)):
+                if box_id1[i] != box_id2[i]:
+                    differences += 1
+                else:
+                    common_letters.append(box_id1[i])
+                if differences == 2:
+                    break
+            if differences == 1:
+                return ''.join(common_letters)
+
+print find_correct_boxes(puzzle_input) # Your puzzle answer was iosnxmfkpabcjpdywvrtahluy.

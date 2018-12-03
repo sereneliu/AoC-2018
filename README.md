@@ -10,7 +10,7 @@ Finished Part 1 within minutes. My first solution for Part 2 did not take long t
 
 Moving on to Day 2 for now, but will definitely come back to optimize this second part.
 
-Few minutes later...
+After my [friend](https://github.com/ephemient) sent me [this link](https://www.reddit.com/comments/a2ajyv) a couple of minutes later...
 
 Apparently simply changing my list to a set in Python speeds it up a lot. I learn something new everyday.
 
@@ -19,3 +19,5 @@ Apparently simply changing my list to a set in Python speeds it up a lot. I lear
     sys     0m0.008s
 
 ## Day 2
+
+Nothing really new here. Although, one thing I'm using this year that I didn't use last year is `break`. Never really used them before until I started playing [7 Billion Humans](https://tomorrowcorporation.com/7billionhumans).
