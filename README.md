@@ -21,3 +21,7 @@ Apparently simply changing my list to a set in Python speeds it up a lot. I lear
 ## Day 2
 
 Nothing really new here. Although, one thing I'm using this year that I didn't use last year is `break`. Never really used them before until I started playing [7 Billion Humans](https://tomorrowcorporation.com/7billionhumans).
+
+## Day 3
+
+3 days worth of puzzles in one day! In general, I would like to start these puzzles at midnight when they are released unless I need to sleep early or something. It's not like I think I will ever make the leaderboard, but no harm in trying to see how fast I can compete these puzzles, right? I'm definitely solving these much faster than last year.
