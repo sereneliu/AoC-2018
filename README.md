@@ -24,4 +24,6 @@ Nothing really new here. Although, one thing I'm using this year that I didn't u
 
 ## Day 3
 
-3 days worth of puzzles in one day! In general, I would like to start these puzzles at midnight when they are released unless I need to sleep early or something. It's not like I think I will ever make the leaderboard, but no harm in trying to see how fast I can compete these puzzles, right? I'm definitely solving these much faster than last year.
+3 days worth of puzzles in one day! In general, I would like to start these puzzles at midnight when they are released unless I need to sleep early or something. It's not like I think I will ever make the leaderboard, but no harm in trying to see how fast I can compete these puzzles, right? 
+
+I'm definitely solving these much faster than last year. Before, I always came up with the solution using the example input before using my actual puzzle input. This is because I wrote print statements after every line of code I wrote just to check that my code was actually doing what I want it to. Example input is always a lot shorter so it's easier to see when I make mistakes. Now, I have a much better understanding of what my code is doing and I can skip most of this. Only need to check when I don't get the right answer at the end. Soon, I would like to get to the point where I am writing asserts instead of print statements to check my work.
