@@ -10,4 +10,12 @@ Finished Part 1 within minutes. My first solution for Part 2 did not take long t
 
 Moving on to Day 2 for now, but will definitely come back to optimize this second part.
 
+Few minutes later...
+
+Apparently simply changing my list to a set in Python speeds it up a lot. I learn something new everyday.
+
+    real    0m0.116s
+    user    0m0.104s
+    sys     0m0.008s
+
 ## Day 2

@@ -67,14 +67,14 @@ def find_frequency(frequency, frequency_changes):
 # What is the first frequency your device reaches twice?
 
 def find_frequency_twice(frequency, frequency_changes):
-    frequencies = []
+    frequencies = set()
     repeat = False
     while not repeat:
         for change in frequency_changes:
             if not repeat:
                 frequency = add_frequency(frequency, change)
                 if frequency not in frequencies:
-                    frequencies.append(frequency)
+                    frequencies.add(frequency)
                 else:
                     repeat = True
             else:
