@@ -48,7 +48,7 @@
 
 # What is the ID of the guard you chose multiplied by the minute you chose? (In the above example, the answer would be 10 * 24 = 240.)
 
-from statistics import mode
+from statistics import mode, StatisticsError
 
 puzzle_input = open('day4.txt', 'r')
 puzzle_input = puzzle_input.read()
@@ -106,8 +106,32 @@ def find_min_most_likely_asleep(guard, guard_log):
         while counter < guard_log[guard][i + 1]:
             minutes.append(counter)
             counter += 1
-    return mode(minutes)
+    try:
+        return mode(minutes), minutes.count(mode(minutes))
+    except StatisticsError:
+        return 0, 0
 
-min_of_choice = find_min_most_likely_asleep(guard_of_choice, guards_sleep_logs)
+min_of_choice, times_asleep = find_min_most_likely_asleep(guard_of_choice, guards_sleep_logs)
 
 print int(guard_of_choice) * min_of_choice # Your puzzle answer was 12504.
+
+# --- Part Two ---
+# Strategy 2: Of all guards, which guard is most frequently asleep on the same minute?
+
+# In the example above, Guard #99 spent minute 45 asleep more than any other guard or minute - three times in total. (In all other cases, any guard spent any minute asleep at most twice.)
+
+# What is the ID of the guard you chose multiplied by the minute you chose? (In the above example, the answer would be 99 * 45 = 4455.)
+
+def strategy_2(guard_log):
+    guard_of_choice = ''
+    min_of_choice = 0
+    times_asleep = 0
+    for guard in guard_log.keys():
+        minute, times = find_min_most_likely_asleep(guard, guard_log)
+        if times > times_asleep:
+            times_asleep = times
+            guard_of_choice = guard
+            min_of_choice = minute
+    return int(guard_of_choice) * min_of_choice
+        
+print strategy_2(guards_sleep_logs) # Your puzzle answer was 139543.
