@@ -27,10 +27,10 @@ puzzle_input = puzzle_input.read()
 test_input = 'dabAcCaCBAcCcaDA'
 
 def react(polymer):
-    for i in range(len(polymer) - 2):
+    for i in range(len(polymer) - 1):
         if (polymer[i].islower() and polymer[i + 1] == polymer[i].upper()) or (polymer[i].isupper() and polymer[i + 1] == polymer[i].lower()):
-            polymer = polymer[:i] + polymer[i + 2:]
-            return polymer
+            polymer = polymer.replace(polymer[i] + polymer[i + 1], '##')
+    polymer = polymer.replace('#', '')
     return polymer
 
 def fully_react(polymer):
@@ -38,7 +38,7 @@ def fully_react(polymer):
         polymer = react(polymer)
     return len(polymer)
     
-# print fully_react(puzzle_input) # Your puzzle answer was 11152.
+print fully_react(puzzle_input) # Your puzzle answer was 11152.
 
 # --- Part Two ---
 # Time to improve the polymer.
@@ -69,4 +69,4 @@ def find_shortest_polymer(polymer):
         shortest_len = min(improved_react(polymer, letter), shortest_len)
     return shortest_len
 
-print find_shortest_polymer(puzzle_input)
+print find_shortest_polymer(puzzle_input) # Your puzzle answer was 6136.
