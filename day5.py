@@ -31,12 +31,11 @@ def react(polymer):
         if (polymer[i].islower() and polymer[i + 1] == polymer[i].upper()) or (polymer[i].isupper() and polymer[i + 1] == polymer[i].lower()):
             polymer = polymer[:i] + polymer[i + 2:]
             return polymer
+    return polymer
 
 def fully_react(polymer):
-    prior_polymer = polymer
-    if react(polymer) == None:
-        print len(prior_polymer)
-    else:
-        fully_react(react(polymer))
+    while polymer != react(polymer):
+        polymer = react(polymer)
+    return len(polymer)
     
-fully_react(test_input)
+print fully_react(test_input)
