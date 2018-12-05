@@ -24,15 +24,19 @@
 puzzle_input = open('day5.txt', 'r')
 puzzle_input = puzzle_input.read()
 
+test_input = 'dabAcCaCBAcCcaDA'
+
 def react(polymer):
     for i in range(len(polymer) - 2):
         if (polymer[i].islower() and polymer[i + 1] == polymer[i].upper()) or (polymer[i].isupper() and polymer[i + 1] == polymer[i].lower()):
-            polymer = polymer[:polymer[i]] + polymer[polymer[i + 2]:]
-    return polymer
+            polymer = polymer[:i] + polymer[i + 2:]
+            return polymer
 
 def fully_react(polymer):
-    while polymer != react(polymer):
-        react(polymer)
-    return polymer
+    prior_polymer = polymer
+    if react(polymer) == None:
+        print len(prior_polymer)
+    else:
+        fully_react(react(polymer))
     
-print fully_react(puzzle_input)
+fully_react(test_input)
