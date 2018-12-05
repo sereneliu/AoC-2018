@@ -38,7 +38,11 @@ This day's puzzle was particularly frustrating. It didn't take me long to figure
 
 Part 1 v1
 
-Part 2 v2 - I called it quits after waiting for over half an hour.
+    real    1m13.034s
+    user    1m12.384s
+    sys     0m0.100s
+
+Part 2 v2 - I called it quits after waiting for over half an hour, but I assume it's around the time it takes to do Part 1 x 26.
 
 Part 1 v2
 
