@@ -38,4 +38,4 @@ def fully_react(polymer):
         polymer = react(polymer)
     return len(polymer)
     
-print fully_react(test_input)
+print fully_react(puzzle_input) # Your puzzle answer was 11152.
