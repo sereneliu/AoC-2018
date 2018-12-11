@@ -139,7 +139,9 @@
 
 # What message will eventually appear in the sky?
 
-puzzle_input = open('day10.txt', 'r')
+from collections import Counter
+
+puzzle_input = open('day10_example.txt', 'r')
 puzzle_input = puzzle_input.read()
 puzzle_input = puzzle_input.split('\n')
 
@@ -164,4 +166,10 @@ def create_points_of_light(sec):
         points_of_light[i + 1] = (px + vx * sec, py + vy * sec)
     return points_of_light
 
-print create_points_of_light(1)
+def find_mode(light_dict):
+    x_coordinates = []
+    for coordinates in light_dict.values():
+        x_coordinates.append(coordinates[0])
+    return Counter(x_coordinates)
+
+print find_mode(create_points_of_light(3))
