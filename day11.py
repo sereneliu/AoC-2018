@@ -71,6 +71,7 @@ def find_most_power(grid_size, sq_size, serial):
     most_power = 0
     most_power_x = 0
     most_power_y = 0
+    most_power_size = 0
     for x in range(1, grid_size - 1):
         for y in range(1, grid_size - 1):
             square_power = 0
@@ -81,6 +82,34 @@ def find_most_power(grid_size, sq_size, serial):
             if most_power == square_power:
                 most_power_x = x
                 most_power_y = y
-    return most_power_x, most_power_y
+                most_power_size = sq_size
+    return most_power, most_power_x, most_power_y, most_power_size
 
 print find_most_power(300, 3, 3463)
+
+# --- Part Two ---
+# You discover a dial on the side of the device; it seems to let you select a square of any size, not just 3x3. Sizes from 1x1 to 300x300 are supported.
+
+# Realizing this, you now must find the square of any size with the largest total power. Identify this square by including its size as a third parameter after the top-left coordinate: a 9x9 square with a top-left corner of 3,5 is identified as 3,5,9.
+
+# For example:
+
+# For grid serial number 18, the largest total square (with a total power of 113) is 16x16 and has a top-left corner of 90,269, so its identifier is 90,269,16.
+# For grid serial number 42, the largest total square (with a total power of 119) is 12x12 and has a top-left corner of 232,251, so its identifier is 232,251,12.
+# What is the X,Y,size identifier of the square with the largest total power?
+
+def find_most_power_varied_sizes(grid_size, serial):
+    most_power = 0
+    most_power_x = 0
+    most_power_y = 0
+    most_power_size = 0
+    for num in range(grid_size):
+        power, x, y, size = find_most_power(grid_size, num + 1, serial)
+        most_power = max(most_power, power)
+        if most_power == power:
+            most_power_x = x
+            most_power_y = y
+            most_power_size = size
+    return most_power_x, most_power_y, most_power_size
+
+print find_most_power_varied_sizes(300, 3463)
