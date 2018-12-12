@@ -96,4 +96,11 @@ def find_plants(initial_state, notes, generations):
             all_pots += starting_pos + i
     return all_pots
 
-print find_plants(initial_state, create_notes(puzzle_input), 20)
+# print find_plants(initial_state, create_notes(puzzle_input), 20) # Your puzzle answer was 2995.
+
+# --- Part Two ---
+# You realize that 20 generations aren't enough. After all, these plants will need to last another 1500 years to even reach your timeline, not to mention your future.
+
+# After fifty billion (50000000000) generations, what is the sum of the numbers of all pots which contain a plant?
+
+print find_plants(initial_state, create_notes(puzzle_input), 50000000000)
