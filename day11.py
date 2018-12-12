@@ -72,8 +72,8 @@ def find_most_power(grid_size, sq_size, serial):
     most_power_x = 0
     most_power_y = 0
     most_power_size = 0
-    for x in range(1, grid_size - 1):
-        for y in range(1, grid_size - 1):
+    for x in range(1, grid_size - sq_size + 2):
+        for y in range(1, grid_size - sq_size + 2):
             square_power = 0
             for a in range(sq_size):
                 for b in range(sq_size):
