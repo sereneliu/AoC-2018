@@ -67,15 +67,15 @@ def find_power_level(x, y, serial):
     power_level -= 5
     return power_level
 
-def find_most_power(serial):
+def find_most_power(grid_size, sq_size, serial):
     most_power = 0
-    for x in range(1, 299):
-        for y in range(1, 299):
+    for x in range(1, grid_size - 1):
+        for y in range(1, grid_size - 1):
             square_power = 0
-            for a in range(3):
-                for b in range(3):
+            for a in range(sq_size):
+                for b in range(sq_size):
                     square_power += find_power_level(x + a, y + b, serial)
             most_power = max(square_power, most_power)
     return most_power
 
-print find_most_power(3463)
+print find_most_power(300, 3, 3463)
