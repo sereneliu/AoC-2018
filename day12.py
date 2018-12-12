@@ -94,7 +94,7 @@ def find_plants(initial_state, notes, generations):
     for i in range(len(state)):
         if state[i] == '#':
             all_pots += starting_pos + i
-    return all_pots
+    return state, all_pots
 
 # print find_plants(initial_state, create_notes(puzzle_input), 20) # Your puzzle answer was 2995.
 
@@ -103,4 +103,23 @@ def find_plants(initial_state, notes, generations):
 
 # After fifty billion (50000000000) generations, what is the sum of the numbers of all pots which contain a plant?
 
-print find_plants(initial_state, create_notes(puzzle_input), 50000000000)
+current_gen, pots = find_plants(initial_state, create_notes(puzzle_input), 160)
+
+def strip_ends(pattern):
+    begin = pattern.find('#')
+    end = pattern.rfind('#')
+    stripped_pattern = pattern[begin:end + 1]
+    return stripped_pattern
+
+def find_stable_pattern(pattern):
+    gen = 0
+    current_pattern = ''
+    next_pattern = pattern
+    while current_pattern != next_pattern:
+        current_pattern = next_pattern
+        full_pattern, pots = find_plants(current_pattern, create_notes(puzzle_input), 1)
+        next_pattern = strip_ends(full_pattern)
+        gen += 1
+    return gen, current_pattern
+
+print find_stable_pattern(initial_state)
