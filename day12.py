@@ -83,11 +83,15 @@ def find_plants(initial_state, notes, generations):
     all_pots = 0
     for _ in range(generations):
         state = '..' + state + '..'
-        next_state = []
+        print state
+        next_state = '..'
         for i in range(len(state) - 4):
-            next_state.append(notes[state[i:i + 5]])
-        next_state = ''.join(next_state)
-        state = '..' + next_state + '..'
+            if state[i:i + 5] in notes.keys():
+                next_state += notes[state[i:i + 5]]
+            else:
+                next_state += '.'
+        state = next_state + '..'
+        print state
         starting_pos -= 2
     for i in range(len(state)):
         if state[i] == '#':
