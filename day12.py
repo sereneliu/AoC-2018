@@ -120,6 +120,13 @@ def find_stable_pattern(pattern):
         full_pattern, pots = find_plants(current_pattern, create_notes(puzzle_input), 1)
         next_pattern = strip_ends(full_pattern)
         gen += 1
-    return gen, current_pattern
+    return gen, pots
 
-print find_stable_pattern(initial_state)
+print find_stable_pattern(initial_state) # gen = 162, pots = 12203
+
+#163, 12276
+#164, 12349
+#165, 12422
+#difference between each gen is +73
+
+print (50000000000 - 165) * 73 + 12422 # Your puzzle answer was 3650000000377.
