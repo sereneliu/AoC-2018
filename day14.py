@@ -1,4 +1,5 @@
 # --- Day 14: Chocolate Charts ---
+
 # You finally have a chance to look at all of the produce moving around. Chocolate, cinnamon, mint, chili peppers, nutmeg, vanilla... the Elves must be growing these plants to make hot chocolate! As you realize this, you hear a conversation in the distance. When you go to investigate, you discover two Elves in what appears to be a makeshift underground kitchen/laboratory.
 
 # The Elves are trying to come up with the ultimate hot chocolate recipe; they're even maintaining a scoreboard which tracks the quality score (0-9) of each recipe.
@@ -35,16 +36,14 @@
 # After 5 recipes, the scores of the next ten would be 0124515891.
 # After 18 recipes, the scores of the next ten would be 9251071085.
 # After 2018 recipes, the scores of the next ten would be 5941429882.
+
 # What are the scores of the ten recipes immediately after the number of recipes in your puzzle input?
 
 # Your puzzle input is 084601.
 
 puzzle_input = '084601'
 
-def add_recipes(num_of_recipes, recipes_after):
-    recipes = '37'
-    elf1 = 0
-    elf2 = 1
+def add_recipes(recipes, elf1, elf2, num_of_recipes, recipes_after):
     num_of_recipes = int(num_of_recipes)
     for _ in range(num_of_recipes + recipes_after):
         score1 = int(recipes[elf1])
@@ -53,6 +52,28 @@ def add_recipes(num_of_recipes, recipes_after):
         recipes += new_score
         elf1 = (elf1 + score1 + 1) % len(recipes)
         elf2 = (elf2 + score2 + 1) % len(recipes)
-    return recipes[num_of_recipes:num_of_recipes + 10]
+    # print recipes[num_of_recipes:num_of_recipes + 10]
+    return recipes, elf1, elf2
 
-print add_recipes(puzzle_input, 10) # Your puzzle answer was 2688510125.
+# add_recipes('37', 0, 1, puzzle_input, 10) # Your puzzle answer was 2688510125.
+
+# --- Part Two ---
+
+# As it turns out, you got the Elves' plan backwards. They actually want to know how many recipes appear on the scoreboard to the left of the first recipes whose scores are the digits from your puzzle input.
+
+# 51589 first appears after 9 recipes.
+# 01245 first appears after 5 recipes.
+# 92510 first appears after 18 recipes.
+# 59414 first appears after 2018 recipes.
+
+# How many recipes appear on the scoreboard to the left of the score sequence in your puzzle input?
+
+def find_scores(scores_to_find):
+    recipes = '37'
+    elf1 = 0
+    elf2 = 1
+    while scores_to_find not in recipes:
+        recipes, elf1, elf2 = add_recipes(recipes, elf1, elf2, 1, 0)
+    return len(recipes[:recipes.index(scores_to_find)])
+
+print find_scores(puzzle_input)
