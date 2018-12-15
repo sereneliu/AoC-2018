@@ -72,4 +72,4 @@ Once Daniel sent me a wiki article about [elementary cellular automaton](https:/
 
 ## Day 14
 
-I misread the instructions and tried to do part 2 for part 1. Took awhile before I fully understood what part 1 was actually asking for. On the other hand, that meant that it didn't take me very long to do part 2 the brute force way. I'm not very good at the "make it fast" stage. Have so much that I need to learn.
+I misread the instructions and tried to do part 2 for part 1. Took awhile before I fully understood what part 1 was actually asking for. On the other hand, that meant that it didn't take me very long to code part 2 the brute force way. I'm not very good at the "make it fast" stage. Have so much that I need to learn.
