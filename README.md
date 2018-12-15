@@ -55,3 +55,21 @@ Part 2 v2
     real    1m17.145s
     user    1m16.908s
     sys     0m0.060s
+
+## Days 6 - 10
+
+Went on a ski trip. Will come back to these later.
+
+## Day 11
+
+Since I use an [online IDE](https://c9.io), I just kept it running until I got an answer to part 2. I don't know exactly how long it took, but I discovered it finished three days later...
+
+## Day 12
+
+Once Daniel sent me a wiki article about [elementary cellular automaton](https://en.wikipedia.org/wiki/Elementary_cellular_automaton), I assumed that my puzzle will eventually reach a stable pattern and was able to solve part 2 using this assumption. I do recognize that the pattern could stay random BUT I figured that the puzzle maker wouldn't do this. I didn't actually finish coding my solution and got my answer before midnight using a bit of math. Will come back to actually code the end.
+
+## Day 13
+
+## Day 14
+
+I misread the instructions and tried to do part 2 for part 1. Took awhile before I fully understood what part 1 was actually asking for. On the other hand, that meant that it didn't take me very long to do part 2 the brute force way. I'm not very good at the "make it fast" stage. Have so much that I need to learn.
