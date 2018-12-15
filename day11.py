@@ -112,4 +112,4 @@ def find_most_power_varied_sizes(grid_size, serial):
             most_power_size = size
     return most_power_x, most_power_y, most_power_size
 
-print find_most_power_varied_sizes(300, 3463)
+print find_most_power_varied_sizes(300, 3463) # Your puzzle answer was 233,282,11. (Took several days to calculate... I think.)
