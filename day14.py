@@ -72,8 +72,8 @@ def find_scores(scores_to_find):
     recipes = '37'
     elf1 = 0
     elf2 = 1
-    while scores_to_find not in recipes:
+    while scores_to_find not in recipes[-len(scores_to_find) - 1:]:
         recipes, elf1, elf2 = add_recipes(recipes, elf1, elf2, 1, 0)
     return len(recipes[:recipes.index(scores_to_find)])
 
-print find_scores(puzzle_input)
+print find_scores(puzzle_input) # Your puzzle answer was 20188250.
