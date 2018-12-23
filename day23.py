@@ -69,7 +69,6 @@ def man_dist(bot1, bot2):
     return abs(a - d) + abs(b - e) + abs(c - f)
 
 def find_nanobots_in_range(nanobot, nanobots):
-    nanobots.remove(nanobot)
     nanobots_in_range = 0
     for nb in nanobots:
         nb_range = man_dist(nanobot.location, nb.location)
@@ -77,4 +76,4 @@ def find_nanobots_in_range(nanobot, nanobots):
             nanobots_in_range += 1
     return nanobots_in_range
 
-print find_nanobots_in_range(nanobot_largest_r, nanobots)
+print find_nanobots_in_range(nanobot_largest_r, nanobots) # Your puzzle answer was 491.
