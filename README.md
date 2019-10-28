@@ -1,1 +1,2 @@
-# AoC-2018
+# 2019 Log
+As it turns out, keeping up with this last year with a full time job and lots of travel was much harder than the year before when I was unemployed. On the bright side, I got through more puzzles than I remembered. Before this year's AoC, I would like to spend November finishing up the rest of the 2018 puzzles. I will try to keep a log on the things I learn. The beginning might be slower as I try to recall Python syntax (I normally write Java at work).
