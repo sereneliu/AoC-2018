@@ -1,3 +1,5 @@
+import setup
+
 # --- Day 2: Inventory Management System ---
 # You stop falling through time, catch your breath, and check the screen on the device. "Destination reached. Current Year: 1518. Current Location: North Pole Utility Closet 83N10." You made it! Now, to find those anomalies.
 
@@ -22,9 +24,7 @@
 
 # What is the checksum for your list of box IDs?
 
-puzzle_input = open('day2.txt', 'r')
-puzzle_input = puzzle_input.read()
-puzzle_input = puzzle_input.split('\n')
+puzzle_input = setup.read_puzzle('day2.txt')
 
 def count_letters(num, box_id, counter):
     for letter in set(box_id):
